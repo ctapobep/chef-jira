@@ -28,6 +28,7 @@ Vagrant.configure('2') do |config|
       },
       :jira => {
         :install_type => :war,
+        :version => "6.2",
         :database => {
           :type => :postgresql,
           :host => :localhost,
