@@ -17,14 +17,12 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-# remove the deprecated Ubuntu jdk packages
-default['java']['remove_deprecated_packages'] = false
-
 # default jdk attributes
 default['java']['jdk_version'] = '6'
 default['java']['arch'] = kernel['machine'] =~ /x86_64/ ? "x86_64" : "i586"
 default['java']['openjdk_packages'] = []
 default['java']['accept_license_agreement'] = false
+default['java']['set_default'] = true
 
 case node['platform_family']
 when "windows"
@@ -86,9 +84,9 @@ default['java']['jdk']['7']['bin_cmds'] = [ "appletviewer", "apt", "ControlPanel
 # Official checksums for the latest release can be found at http://www.oracle.com/technetwork/java/javase/downloads/java-se-binaries-checksum-1956892.html
 
 # x86_64
-default['java']['jdk']['7']['x86_64']['url'] = 'http://download.oracle.com/otn-pub/java/jdk/7u45-b18/jdk-7u45-linux-x64.tar.gz'
-default['java']['jdk']['7']['x86_64']['checksum'] = 'bea330fcbcff77d31878f21753e09b30'
+default['java']['jdk']['7']['x86_64']['url'] = 'http://download.oracle.com/otn-pub/java/jdk/7u51-b13/jdk-7u51-linux-x64.tar.gz'
+default['java']['jdk']['7']['x86_64']['checksum'] = '764f96c4b078b80adaa5983e75470ff2'
 
 # i586
-default['java']['jdk']['7']['i586']['url'] = 'http://download.oracle.com/otn-pub/java/jdk/7u45-b18/jdk-7u45-linux-i586.tar.gz'
-default['java']['jdk']['7']['i586']['checksum'] = '66b47e77d963c5dd652f0c5d3b03cb52'
+default['java']['jdk']['7']['i586']['url'] = 'http://download.oracle.com/otn-pub/java/jdk/7u51-b13/jdk-7u51-linux-i586.tar.gz'
+default['java']['jdk']['7']['i586']['checksum'] = '909d353c1caf6b3b54cc20767a7778ef'
